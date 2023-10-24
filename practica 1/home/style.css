@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    background-color: #84725E ;
+    border: 1px;
+    justify-content: baseline;
+}
+.logo{
+    align-self: center;
+}
+.links{
+    align-self: flex-end;
+}
+
