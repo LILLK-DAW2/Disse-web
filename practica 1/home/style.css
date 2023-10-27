@@ -1,17 +1,50 @@
 body{
     margin: 0;
 }
+.center{
+    position: absolute;
+    left: 50%;
+
+}
 .title{
     display: flex;
-    flex-direction: row;
-    background-color: #84725E ;
-    border: 1px;
-    justify-content: baseline;
-}
-.logo{
-    align-self: center;
-}
-.links{
-    align-self: flex-end;
+    position: sticky;
+    justify-content: space-between;
+    background-color: #84725E;
+    height: 100px;
+
 }
 
+.title>* {
+    width: calc(100%/3 - 20px *2/3);
+    position: relative;
+}
+.page_title{
+
+}
+.logo{
+
+}
+.links{
+
+}
+
+.links-contenteiner{
+width: fit-content;
+}
+
+.links-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+
+}
+
+.links-contenteiner:hover .links-content {
+    display: block;
+}
