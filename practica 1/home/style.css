@@ -2,46 +2,25 @@ body{
     margin: 0;
 }
 
-h1{
-    position: relative;
-
-}
-image{
-    position: relative;
-    left: 50%;
-}
-
 .title{
     display: flex;
     position: sticky;
     justify-content: space-between;
-    background-color: #84725E;
+    background-color: #D6aD60;
     height: 100px;
+    top: 0;
+
 
 }
-
 .title>* {
     width: calc(100%/3 - 20px *2/3);
     text-align: center;
-
 }
-
-.menu {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    margin: 0;
-    justify-content: center;
-    left: 50%;
-}
-
-.menu:hover > .menu-title{
-    transition:
-            0.2s border-top-width ease-in,
-            0.3s border-top-color;
-    box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
-    transform: translateY(-0.25em);
-
+.menu{
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin-left: 50%;
 
 }
 
@@ -50,7 +29,6 @@ image{
     height: 0;
     padding-top: 0;
     padding-bottom: 0;
-    margin: 0;
     background: #dddddd;
     z-index: 99;
     transition:
@@ -63,10 +41,6 @@ image{
 
 .menu:not(:hover) > .menu-dropdown > * {
     visibility: hidden;
-    height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 0;
     color: rgba(25,25,25,0);
     transition:
             0.5s 0.1s height,
@@ -75,27 +49,28 @@ image{
             0.3s color,
             0.6s visibility;
     z-index: 99;
-}
 
+
+}
 .menu-title {
-    opacity: 1;
-    display: block;
-    width: 150px;
-    height: 40px;
-    padding: 12px 0 0;
-    background: #7d8450;
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    
+    position: relative;
 }
-
-.menu-dropdown {
-
-    opacity: 1;
-    min-width: 4px;
-    padding: 15px 0;
+.menu-title:hover{
+    transition:
+            0.2s border-top-width ease-in,
+            0.3s border-top-color;
+    box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
+    transform: translateY(-0.25em);
+}
+.menu-title > *{
     position: absolute;
+}
+.menu-dropdown {
+    margin-left: 45%;
+    opacity: 1;
+    width: fit-content;
+    height: fit-content;
+    padding: 15px 0;
     background: #ebebeb;
     z-index: 100;
     transition:
@@ -103,9 +78,15 @@ image{
             0.5s background;
     border: 1px solid;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to left, #282f28, #d0ef07);
+    border-image-source: linear-gradient(to left, #FFA260FF, #d0ef07);
     box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
 
+
+}
+
+.menu-dropdown a{
+    color: black;
+    text-decoration: none;
 }
 
 .menu-dropdown > * {
@@ -123,8 +104,13 @@ image{
             0.5s 0.2s color,
             0.2s background-color;
 }
-
 .menu-dropdown > *:hover {
-    background: rgba(0,0,0,0.1);
+    background: rgba(255, 162, 96, 0.34);
+}
+.body{
+    width: 100%;
+}
+.body1{
+    width: 100%;
 }
 
