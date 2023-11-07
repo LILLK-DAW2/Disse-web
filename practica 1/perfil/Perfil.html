@@ -10,22 +10,23 @@
 
 </head>
 
+
 <body>
 <div class="title">
 
-    <div class="bloque1">
+    <div>
         <h1>Perfil</h1>
     </div>
-    <div class="bloque2">
+    <div>
         <img src="logo.png" alt="logo" width="120" height="100">
     </div>
-    <div class="bloque3">
+    <div>
         <div class="menu">
             <div class="barra-menu"></div>
             <div class="barra-menu"></div>
             <div class="barra-menu"></div>
             <div class="menu-dropdown">
-                <a href="../perfil/Perfil.html">Perfil</a>
+                <a href="../home/home.html">Home</a>
                 <a href="../Modelos/Modelos.html">Modelos</a>
                 <a href="../Novedades/Novedades.html">Novedades</a>
                 <a href="../atencion al cliente/AtencionAlCliente.html">Atencion al cliente </a>
@@ -34,112 +35,95 @@
     </div>
 
 
-
 </div>
+<div class="body">
+    <div class="body1">
+        <img src="slogan.png" alt="Imagen con eslogan" width="400"height="400">
+        <form action="/guardar_perfil" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="nombre"><br><br>
 
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="apellido" ><br><br>
 
-    <div class="body">
-        <div class="body1">
-            <h1>Elegant Contact Form</h1>
-            <form class="cf">
-                <div class="half left cf">
-                    <input type="text" id="input-name" placeholder="Name">
-                    <input type="email" id="input-email" placeholder="Email address">
-                    <input type="text" id="input-subject" placeholder="Subject">
-                </div>
-                <div class="half right cf">
-                    <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
-                </div>
-                <input type="submit" value="Submit" id="input-submit">
-            </form>
-        </div>
-        <div class="body2">
-            
-            <form>
-                <label >First Name:</label><br>
-                <input type="text" name="fname"><br>
-                <label >Last Name:</label><br>
-                <input type="text"  name="lname"><br>
-                <label >Email:</label><br>
-                <input type="email" name="email"><br>
-                <label >Birth Date:</label><br>
-                <input type="birthDate" name="birthDate"><br>
-                <label >Direccion:</label><br>
-                <input type="direccion" name="direccion"><br>
-                <label >Genero:</label><br>
-                <input type="text" name="genero"><br>
-                <input type="submit" value="Submit">
-              </form> 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="email" ><br><br>
 
-              
-        </div>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="telefono" ><br><br>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" placeholder="direccion" ><br><br>
+
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+    <div class="body2">
+        <h1 class="contactanos">Contactanos</h1>
+        <form class="cf">
+            <div class="half left cf">
+                <input type="text" id="input-name" placeholder="Name">
+                <input type="email" id="input-email" placeholder="Email address">
+                <input type="text" id="input-subject" placeholder="Subject">
+            </div>
+            <div class="half right cf">
+                <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+            </div>
+            <input type="submit" value="Submit" id="input-submit">
+        </form>
 
     </div>
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <h6>About</h6>
-                    <p class="text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in tempor nunc. Nullam ac
-                        ultricies nulla, ac fermentum elit. Sed convallis odio vel mi cursus, in vestibulum sapien dapibus.
-                        Nam vel eros eget ipsum tristique volutpat. Maecenas sit amet suscipit lectus. Phasellus tincidunt,
-                        massa at blandit venenatis, velit quam mattis odio, nec tristique nulla elit id arcu.
-                    </p>
-
-                </div>
-
-
-                <div class="col-xs-6 col-md-3">
-                    <h6>Categorias</h6>
-                    <ul class="footer-links">
-                        <li><a href="">C</a></li>
-                        <li><a href="">UI Design</a></li>
-                        <li><a href="">PHP</a></li>
-                        <li><a href="">Java</a></li>
-                        <li><a href="">Android</a></li>
-                        <li><a href="">Templates</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-6 col-md-3">
-                    <h6>Enlaces rapidos</h6>
-                    <ul class="footer-links">
-                        <li><a href="">Sobre nosotros</a></li>
-                        <li><a href="">contactanos</a></li>
-                        <li><a href="">Dona</a></li>
-                        <li><a href="" >Privacy Policy</a></li>
-                    </ul>
-                </div>
-
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in tempor nunc. Nullam ac
+                    ultricies nulla, ac fermentum elit. Sed convallis odio vel mi cursus, in vestibulum sapien dapibus.
+                    Nam vel eros eget ipsum tristique volutpat. Maecenas sit amet suscipit lectus. Phasellus tincidunt,
+                    massa at blandit venenatis, velit quam mattis odio, nec tristique nulla elit id arcu.
+                </p>
             </div>
-            <hr>
-
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by Mehdi Tahrat</p>
-                </div>
-
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <ul class="social-icons">
-                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="youtube" href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-
-
+            <div class="col-xs-6 col-md-3">
+                <h6>Categorias</h6>
+                <ul class="footer-links">
+                    <li><a href="">C</a></li>
+                    <li><a href="">UI Design</a></li>
+                    <li><a href="">PHP</a></li>
+                    <li><a href="">Java</a></li>
+                    <li><a href="">Android</a></li>
+                    <li><a href="">Templates</a></li>
+                </ul>
             </div>
-
-
-
+            <div class="col-xs-6 col-md-3">
+                <h6>Enlaces rapidos</h6>
+                <ul class="footer-links">
+                    <li><a href="">Sobre nosotros</a></li>
+                    <li><a href="">contactanos</a></li>
+                    <li><a href="">Dona</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                </ul>
+            </div>
         </div>
-
-
-
-    </footer>
-    </body>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by Mehdi Tahrat</p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="youtube" href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
 <html/>

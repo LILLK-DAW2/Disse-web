@@ -17,6 +17,8 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     z-index: 1;
+
+
 }
 
 .title  h1 {
@@ -30,9 +32,11 @@ body {
     font-family: "Century Gothic", 'Lato', sans-serif;
 }
 
+
 .title > * {
     width: calc(100% / 3 - 20px * 2 / 3);
     text-align: center;
+
 }
 
 .barra-menu {
@@ -96,10 +100,12 @@ body {
     right: 0;
 
 }
+
 .menu-dropdown a {
     color: black;
     text-decoration: none;
 }
+
 .menu-dropdown > * {
     overflow: hidden;
     display: flex;
@@ -114,20 +120,12 @@ body {
     0.5s 0.2s color,
     0.2s background-color;
 }
+
 .menu-dropdown > *:hover {
     background: rgba(255, 162, 96, 0.34);
 }
+
 .body1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 50px;
-}
-.body1 img {
-    border: #0B032DFF 1px;
-    border-radius: 80%;
-}
-.body2 {
     background: linear-gradient(45deg, #0B032DFF 0%, #af9cd2 100%);
     border: 1px solid #D6AD60C6;
     padding: 80px;
@@ -135,128 +133,160 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-
 }
-.body2-containers:hover {
+
+.body2 {
+    background: linear-gradient(45deg, #af9cd2 0%, #0B032DFF 100%);
+    border: 1px solid #D6AD60C6;
+    padding: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.body1-containers:hover {
     filter: drop-shadow(0 30px 10px #D6AD60C6);
     transition: 0.5s;
     background-size: 120%;
 }
-.body2-containers {
+
+.body1-containers {
     margin-top: 5%;
     width: calc(100% / 4 - 50px * 3 / 4);
     position: relative;
     z-index: 0;
     text-align: center;
 }
-.body2-containers img{
+
+.body1-containers img {
     height: 500px;
     background-position: center;
     background-size: cover;
     border-radius: 12px;
     border: 2px solid #D6AD60C6;
 }
-.body2-containers p {
+
+.body1-containers p {
     color: white;
     text-align: center;
 }
 
-@media all and (max-width: 992px){
-    .body2-containers{
+@media all and (max-width: 992px) {
+    .body1-containers {
         width: calc(100% / 3 - 50px * 2 / 3);
     }
 }
-@media all and (max-width: 500px){
-    .body2-containers{
+
+@media all and (max-width: 500px) {
+    .body1-containers {
         width: calc(100%);
     }
 }
-    .site-footer {
-        background-color: #26272b;
-        padding: 45px 0 20px;
-        font-size: 15px;
-        line-height: 24px;
-        color: #737373;
-    }
-    .site-footer a {
-        color: #737373;
-    }
-    .site-footer a:hover {
-        color: #3366cc;
-        text-decoration: none;
-    }
-    .site-footer .social-icons {
-        text-align: right;
-    }
-    .site-footer .social-icons a {
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        margin-left: 6px;
-        margin-right: 0;
-        border-radius: 100%;
-        background-color: #33353d;
-    }
-    .social-icons {
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-    }
-    .social-icons li {
-        display: inline-block;
-        margin-bottom: 4px;
-    }
-    .social-icons li.title {
-        margin-right: 15px;
-        text-transform: uppercase;
-        color: #96a2b2;
-        font-weight: 700;
-        font-size: 13px;
-    }
-    .social-icons a {
-        background-color: #eceeef;
-        color: #818a91;
-        font-size: 16px;
-        display: inline-block;
-        line-height: 44px;
-        width: 44px;
-        height: 44px;
-        text-align: center;
-        margin-right: 8px;
-        border-radius: 100%;
-        -webkit-transition: all 0.2s linear;
-        -o-transition: all 0.2s linear;
-        transition: all 0.2s linear;
-    }
-    .social-icons a.facebook:hover {
-        background-color: #3b5998;
-    }
-    .social-icons a.twitter:hover {
-        background-color: #00aced;
-    }
-    .social-icons a.linkedin:hover {
-        background-color: #007bb6;
-    }
-    .social-icons a.youtube:hover {
-        background-color: #e11717;
-    }
-    .footer-links {
-        padding-left: 0;
-        list-style: none;
-    }
-    .footer-links li {
-        display: block;
-    }
-    .footer-links a:active,
-    .footer-links a:focus,
-    .footer-links a:hover {
-        color: #3366cc;
-        text-decoration: none;
-    }
-    .footer-links.inline li {
-        display: inline-block;
-    }
-    .copyright-text {
-        margin: 0;
-    }
+
+.site-footer {
+    background-color: #26272b;
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #737373;
+}
+
+.site-footer a {
+    color: #737373;
+}
+
+.site-footer a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.site-footer .social-icons {
+    text-align: right;
+}
+
+.site-footer .social-icons a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #33353d;
+}
+
+.social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.social-icons li.title {
+    margin-right: 15px;
+    text-transform: uppercase;
+    color: #96a2b2;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.social-icons a {
+    background-color: #eceeef;
+    color: #818a91;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.social-icons a.facebook:hover {
+    background-color: #3b5998;
+}
+
+.social-icons a.twitter:hover {
+    background-color: #00aced;
+}
+
+.social-icons a.linkedin:hover {
+    background-color: #007bb6;
+}
+
+.social-icons a.youtube:hover {
+    background-color: #e11717;
+}
+
+.footer-links {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    display: block;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.footer-links.inline li {
+    display: inline-block;
+}
+
+.copyright-text {
+    margin: 0;
+}
 
