@@ -5,18 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="style_index.css">
 </head>
 <body>
-    <section class= "header">
-        <div class="titulo">
-            <H1>caros mehdi</H1>
-            <img src="/assets/logo.png" alt="imagen" width="50" height="50">
+    <div class= "header">
+        <div>
+            <img src="/assets/foto.png" alt="imagen">
         </div>
-        <button><a href=""></a></button>
-        <button><a href=""></a></button>
-        <button><a href=""></a></button>
+        <div class="menu">
+            <div>
+                <button><a href="formulari.html">formulario</a> </button>
+            </div>
+            <div>
+                <button><a href="perfil.html">perfil</a></button>
+            </div>
+            <div> 
+                <button><a href="productos.html">productos</a></button>
+            </div>
+        </div>
+    </div>
 
-    </section>
+    <div class="body">
+        <div class="body1perfil">
+            <img src="/assets/foto.png" alt="Imagen con eslogan" width="400"height="400">
+            <form action="/guardar_perfil" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="nombre"><br><br>
+    
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="apellido" ><br><br>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="email" ><br><br>
+    
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="telefono" ><br><br>
+    
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" placeholder="direccion" ><br><br>
+    
+                <input type="submit" value="Guardar">
+            </form>
+        </div>
+        
 </body>
 </html>

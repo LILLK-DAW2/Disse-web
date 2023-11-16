@@ -1,0 +1,115 @@
+body{
+margin: 0;
+}
+.header{
+    width: 100%;
+    display: flex;
+    background-color: #D6AD60C6;
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.header .menu{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header .menu > * {
+    width:  auto;
+    padding:10% ;
+}
+.body1{
+    width: 100%;
+    display: flex;
+    background-color: #000000c6;
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.body1 p{
+    border: black 5px solid;
+    background-color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.body1 video{
+    border: black 5px solid;
+    background-color: white;
+}
+.body1 .Pregunta{
+    border: black 5px solid;
+    background-color: green;
+}
+
+.body2{
+ background-color: yellow;
+}
+.body2 h2{
+ text-align: center;
+}
+.body2  .contenedor_fotos{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.body2 .contenedor_fotos .contenido{
+    text-align: center;
+}
+.body3{
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: row;
+justify-content: space-evenly;
+
+}
+.body3 h2{
+    text-align: center;
+    position: relative;
+}
+.body3 .barra{
+    position: relative;
+    height: 0px;
+    width: 80%;
+border: black 10px solid;
+display: flex;
+justify-content: space-evenly;
+}
+.body3 .barra .punto{
+    position: relative;
+    height: 0px;
+    width: 10px;
+    align-self: center;
+    border: orange 10px solid;
+}
+
+.body1perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+.body1perfil img {
+    border: #0B032DFF 1px;
+    border-radius: 100%;
+}
+.body1perfil form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.body1perfil label{
+    border-radius:25% ;
+    color: black;
+    text-shadow: -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px -1px 0 #ffffff;
+    font-size: 15px;
+    margin: 0;
+    letter-spacing: 1rem;
+    font-family: "Century Gothic", 'Lato', sans-serif;
+
+}
