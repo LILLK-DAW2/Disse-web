@@ -1,0 +1,39 @@
+.header{
+    position: absolute;
+    display: flex;
+    background-color: #D6AD60C6;
+    height: 100px;
+    top: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.titulo{
+    background-color: black;
+
+}
+.body1{
+
+}
+.body1 p{
+    
+}
+
+.body2{
+
+}
+.body2  .contenedor_fotos{
+
+}
+
+.body2 .contenedor_fotos .contenido{
+
+}
+.body3{
+
+}
+.body3 .barra{
+
+}
+.body3 .barra .punto{
+
+}
