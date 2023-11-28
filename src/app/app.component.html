@@ -1,0 +1,48 @@
+<div class="container">
+  <label for="filtro">Filtrar por dirección:</label>
+  <br>
+  <select class="form-control mb-3 "  [(ngModel)]="filtro" name="filtro">
+    <option></option>
+    <option *ngFor="let lugar of obtenerLugares()" [value]="lugar">{{lugar}}</option>
+  </select>
+<div class="container base">
+  <h1>Próximos Eventos</h1>
+  <div class="d-flex flex-wrap card-container">
+    <ng-container *ngFor="let evento of obtenerEventosActuales()">
+      <div class="card border-info mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-info text-white">{{ evento.titulo }}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ evento.artista }}</h5>
+          <p class="card-text">{{ evento.fecha | date }} - {{ evento.fecha | date: 'HH:MM' }}h</p>
+          <p class="card-text">{{ evento.direccion }}</p>
+          <p class="card-text">{{ (evento.precio != 0) ? (evento.precio | currency) : "Gratis !!" }}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="col-12 mt-3" *ngIf="obtenerEventosActuales().length == 0">
+    <h3>Sin eventos próximos por mostrar</h3>
+  </div>
+
+  <h1 class="mt-3">Eventos Pasados</h1>
+
+  <div class="d-flex flex-wrap card-container">
+    <ng-container *ngFor="let evento of obtenerEventosPasados()">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-secondary text-white">{{ evento.titulo }}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ evento.artista }}</h5>
+          <p class="card-text">{{ evento.fecha | date }} - {{ evento.fecha | date: 'HH:MM' }}h</p>
+          <p class="card-text">{{ evento.direccion }}</p>
+          <p class="card-text">{{ (evento.precio != 0) ? (evento.precio | currency) : "Gratis !!" }}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="col-12 mt-3" *ngIf="obtenerEventosPasados().length == 0">
+    <h3>Sin eventos pasados por mostrar</h3>
+  </div>
+</div>
+</div>
