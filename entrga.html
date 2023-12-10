@@ -30,20 +30,6 @@
       transition: background-color 0.3s ease;
     }
 
-    .color1 {
-      background-color: #66b2ff; /* Color de fondo del botón cuando proviene del primer array */
-      color: #fff; /* Color de texto del botón cuando proviene del primer array */
-    }
-
-    .color2 {
-      background-color: #ff6666; /* Color de fondo del botón cuando proviene del segundo array */
-      color: #fff; /* Color de texto del botón cuando proviene del segundo array */
-    }
-
-    button:hover {
-      background-color: #3385ff; /* Cambio de color al pasar el ratón */
-    }
-
     #contador {
       font-size: 18px;
       margin-top: 20px;
@@ -53,33 +39,47 @@
     h1 {
       color: #0099cc; /* Color del título */
     }
+
+    .color-2 {
+      background-color: #66b2ff; /* Color de fondo del botón para números del array 1 */
+      color: #fff; /* Color de texto del botón para números del array 1 */
+    }
+
+    .color-3 {
+      background-color: #ff6666; /* Color de fondo del botón para números del array 2 */
+      color: #fff; /* Color de texto del botón para números del array 2 */
+    }
+
+    .color-empty {
+      background-color: #cccccc; /* Color de fondo del botón para estado vacío */
+      color: #333; /* Color de texto del botón para estado vacío */
+    }
   </style>
 </head>
 <body>
   <h1>1to50 Game</h1>
   <div id="contador"></div>
-
   <script>
     // Declaración de variables globales
     var numerosRestantes = 50;
     var numerosCorrectos = 0;
     var contador;
     var tiempoInicio;
-
+  
     // Función para reiniciar el juego
     function reiniciarJuego() {
       // Restablecer variables
       numerosRestantes = 50;
       numerosCorrectos = 0;
       tiempoInicio = null;
-
+  
       // Generar una matriz desordenada 5x5
       generarMatrizDesordenada(5, 5);
   
       // Actualizar el contador en la interfaz
       actualizarContador(0);
     }
-
+  
     // Función para generar una matriz desordenada
     function generarMatrizDesordenada(filas, columnas) {
       // Crear dos arreglos con números del 1 al 25 y del 26 al 50
@@ -104,9 +104,9 @@
           // Obtener un número de la primera matriz mezclada
           var numero = numerosMezclados1[i * columnas + j];
           boton.textContent = numero;
-
-          // Asignar clase color1 al botón
-          boton.classList.add("color1");
+  
+          // Agregar clases de color según el array del que proviene el número
+          boton.className = "color-2";
   
           // Agregar un evento de clic al botón
           boton.addEventListener("click", function() {
@@ -124,13 +124,12 @@
   
             // Verificar si el número clicado es el siguiente en la secuencia
             if (parseInt(this.textContent) === numerosCorrectos + 1) {
+              // Cambiar el color del botón según el array del que proviene el número
+              this.className = (numerosCorrectos < 25) ? "color-3" : "color-2";
+  
               // Actualizar el número en el botón y incrementar el contador de números correctos
-              this.textContent = numerosMezclados2.pop();
+              this.textContent = (numerosCorrectos < 25) ? numerosMezclados2.pop() : "";
               numerosCorrectos++;
-
-              // Cambiar la clase del botón a color2
-              this.classList.remove("color1");
-              this.classList.add("color2");
   
               // Verificar si se han encontrado todos los números
               if (numerosCorrectos === 50) {
@@ -177,5 +176,5 @@
     // Inicializar el juego llamando a la función de reinicio
     reiniciarJuego();
   </script>
-</body>
-</html>
+  </body>
+  </html>
