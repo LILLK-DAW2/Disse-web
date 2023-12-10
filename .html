@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1to50 Game</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    table {
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    button {
+      border: 1px solid black;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+    }
+    #contador {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Declaración de variables globales
+    var numerosRestantes = 50;
+    var numerosCorrectos = 0;
+    var contador;
+    var tiempoInicio;
+  
+    // Función para reiniciar el juego
+    function reiniciarJuego() {
+      // Restablecer variables
+      numerosRestantes = 50;
+      numerosCorrectos = 0;
+      tiempoInicio = null;
+  
+      // Generar una matriz desordenada 5x5
+      generarMatrizDesordenada(5, 5);
+  
+      // Actualizar el contador en la interfaz
+      actualizarContador(0);
+    }
+  
+    // Función para generar una matriz desordenada
+    function generarMatrizDesordenada(filas, columnas) {
+      // Crear dos arreglos con números del 1 al 25 y del 26 al 50
+      var numerosArray1 = Array.from({ length: 25 }, (_, index) => index + 1);
+      var numerosArray2 = Array.from({ length: 25 }, (_, index) => index + 26);
+  
+      // Mezclar aleatoriamente los dos arreglos
+      var numerosMezclados1 = numerosArray1.sort(() => Math.random() - 0.5);
+      var numerosMezclados2 = numerosArray2.sort(() => Math.random() - 0.5);
+  
+      // Crear una tabla en el documento
+      var tabla = document.createElement("table");
+  
+      for (var i = 0; i < filas; i++) {
+        var fila = document.createElement("tr");
+  
+        for (var j = 0; j < columnas; j++) {
+          // Crear una celda y un botón para cada número en la matriz
+          var celda = document.createElement("td");
+          var boton = document.createElement("button");
+  
+          // Obtener un número de la primera matriz mezclada
+          var numero = numerosMezclados1[i * columnas + j];
+          boton.textContent = numero;
+  
+          // Agregar un evento de clic al botón
+          boton.addEventListener("click", function() {
+            // Iniciar el tiempo si aún no ha comenzado
+            if (!tiempoInicio) {
+              tiempoInicio = new Date();
+              // Actualizar el contador cada 100 milisegundos
+              contador = setInterval(function() {
+                var tiempoActual = new Date();
+                var tiempoTranscurrido = (tiempoActual - tiempoInicio) / 1000;
+                // Actualizar el contador en la interfaz
+                actualizarContador(tiempoTranscurrido);
+              }, 100);
+            }
+  
+            // Verificar si el número clicado es el siguiente en la secuencia
+            if (parseInt(this.textContent) === numerosCorrectos + 1) {
+              // Actualizar el número en el botón y incrementar el contador de números correctos
+              this.textContent = numerosMezclados2.pop();
+              numerosCorrectos++;
+  
+              // Verificar si se han encontrado todos los números
+              if (numerosCorrectos === 50) {
+                // Detener el contador y mostrar un mensaje de felicitación
+                clearInterval(contador);
+                alert("¡Felicidades! Has completado el juego en " + tiempoTranscurrido.toFixed(2) + " segundos.");
+                // Reiniciar el juego
+                reiniciarJuego();
+              }
+            } else {
+              // Detener el contador y mostrar un mensaje de error
+              clearInterval(contador);
+              alert("¡Número incorrecto! Has perdido. Intenta de nuevo.");
+              // Reiniciar el juego
+              reiniciarJuego();
+            }
+          });
+  
+          // Agregar el botón a la celda y la celda a la fila
+          celda.appendChild(boton);
+          fila.appendChild(celda);
+        }
+  
+        // Agregar la fila a la tabla
+        tabla.appendChild(fila);
+      }
+  
+      // Limpiar el cuerpo del documento y agregar la tabla
+      document.body.innerHTML = "";
+      document.body.appendChild(tabla);
+  
+      // Crear un elemento de contador y agregarlo al cuerpo del documento
+      var contadorElement = document.createElement("div");
+      contadorElement.id = "contador";
+      document.body.appendChild(contadorElement);
+    }
+  
+    // Función para actualizar el contador en la interfaz
+    function actualizarContador(tiempo) {
+      var contadorElement = document.getElementById("contador");
+      contadorElement.textContent = "Tiempo transcurrido: " + tiempo.toFixed(2) + " segundos";
+    }
+  
+    // Inicializar el juego llamando a la función de reinicio
+    reiniciarJuego();
+  </script>
+  </body>
+  </html>
+  
